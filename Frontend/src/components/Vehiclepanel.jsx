@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { toast } from 'react-toastify'
 
 const VehiclePanel = ({ fare, selectVehicle, setConfirmRidePanel, setVehiclePanel }) => {
   return (
     <div>
-      <h2>Vehicle Panel</h2>
-      <p>Fare: {fare ? JSON.stringify(fare) : 'No fare available'}</p>
+      {/* <h2>Vehicle Panel</h2>
+      <p>Fare: {fare ? JSON.stringify(fare) : 'No fare available'}</p> */}
       <h5 className='p-1 text-center w-[93%] absolute top-0' 
       onClick={() => {
         setVehiclePanel(false)

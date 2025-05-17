@@ -3,8 +3,13 @@ const router = express.Router();
 const {body} = require('express-validator');
 const captainController = require('../controllers/captain.controller.js');
 const authMiddleware = require('../middlewares/auth.middleware.js');
+const multer = require('multer');
+
+
+const upload = multer({ storage: multer.memoryStorage() }); // Example: store file in memory as a Buffer
 
 router.post('/register', [
+    upload.single('upiScanner'), // Use multer to handle a single file upload with the field name 'upiScanner'
     body('email').isEmail().withMessage('Invalid Email'),
     body('fullname.firstname').isLength({ min: 3 }).withMessage('First name must be at least 3 characters long'),
     body('fullname.lastname').isLength({ min: 3 }).withMessage('Last name must be at least 3 characters long'),

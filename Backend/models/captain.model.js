@@ -50,7 +50,7 @@ const captainSchema = new mongoose.Schema({
         },
         capacity: {
             type: Number,
-            required: true,
+            required: true, 
             min: [ 1, 'Capacity must be at least 1' ],
         },
         vehicleType: {
@@ -58,6 +58,11 @@ const captainSchema = new mongoose.Schema({
             required: true,
             enum: [ 'car', 'motorcycle', 'auto' ],
         }
+    },
+
+    upiScannerImageUrl: {
+        type: String, // To store the URL or path to the UPI scanner image
+        default: null
     },
 
     location: {

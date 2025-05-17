@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Start from "./pages/Start";
+import { Route, Routes, Navigate } from "react-router-dom";
 import UserLogin from "./pages/UserLogin";
 import UserSignUp from "./pages/UserSignUp";
 import CaptainLogin from "./pages/CaptainLogin";
@@ -16,14 +15,16 @@ import CaptainHome from './pages/CaptainHome'
 import CaptainProtectWrapper from './pages/CaptainProtectWrapper'
 import Riding from './pages/Riding'
 import CaptainRiding from './pages/CaptainRiding'
-
-
+import SplashScreen from './components/SplashScreen'
+import Payment from './pages/Payment'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div>
+    <>
       <Routes>
-        <Route path="/" element={<Start />} />
+        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<UserLogin />} />
         <Route path="/riding" element={<Riding />} />
         <Route path="/captain-riding" element={<CaptainRiding />} />
@@ -31,6 +32,9 @@ function App() {
         <Route path="/captain-login" element={<CaptainLogin />} />
         <Route path="/captain-signup" element={<CaptainSignUp />} />
         <Route path="/verify-email" element={<VerifyEmail />}></Route>
+        <Route path="/splash" element={<SplashScreen />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/payment" element={<Payment />} />
 
         <Route path='/home'
           element={
@@ -53,7 +57,8 @@ function App() {
           } />
 
       </Routes>
-    </div>
+      <ToastContainer />
+    </>
   );
 }
 

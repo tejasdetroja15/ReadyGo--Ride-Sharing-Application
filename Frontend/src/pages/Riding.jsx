@@ -16,6 +16,10 @@ const Riding = () => {
         navigate('/home')
     })
 
+    const handlePayment = () => {
+        navigate('/payment', { state: { ride } })
+    }
+
     return (
         <div className='h-screen relative flex flex-col justify-end'>
             <div className='fixed p-6 top-0 flex items-center justify-between w-screen'>
@@ -47,12 +51,17 @@ const Riding = () => {
                             <i className="ri-currency-line"></i>
                             <div>
                                 <h3 className='text-lg font-medium'>₹{ride?.fare} </h3>
-                                <p className='text-sm -mt-1 text-gray-600'>Cash Cash</p>
+                                <p className='text-sm -mt-1 text-gray-600'>UPI Payment</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg'>Make a Payment</button>
+                <button 
+                    onClick={handlePayment}
+                    className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg hover:bg-green-700 transition-colors'
+                >
+                    Make a Payment
+                </button>
             </div>
             <div className='h-screen fixed w-screen top-0 z-[-1]'>
                 <LiveTracking />

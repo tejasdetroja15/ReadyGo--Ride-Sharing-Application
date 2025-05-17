@@ -2,25 +2,40 @@ const captainSchema = require('../models/captain.model');
 const captainService = require('../services/captain.service');
 const { validationResult } = require('express-validator');
 const blacklistTokenModel = require('../models/blacklist.model');
+const fs = require('fs');
+const path = require('path');
 
 module.exports.registerCaptain = async (req, res, next) => {
-    
-    
+    console.log('req.file:', req.file);
     const error = validationResult(req);
     if (!error.isEmpty()) {
         return res.status(400).json({ errors: error.array() });
     }
-    
-    const { fullname, email, password , vehicle} = req.body;
-    
+
+    const { fullname, email, password, vehicle } = req.body;
     const iscaptainAlreadyExist = await captainSchema.findOne({ email });
-    
     if (iscaptainAlreadyExist) {
         return res.status(400).json({ message: 'Captain already exist' });
     }
-    
     const hashpassword = await captainSchema.hashpassword(password);
-    
+
+    // Handle UPI scanner file
+    let upiScannerImageUrl = null;
+    if (req.file) {
+        // Ensure uploads/upi_scanners directory exists
+        const uploadDir = path.join(__dirname, '../uploads/upi_scanners');
+        if (!fs.existsSync(uploadDir)) {
+            fs.mkdirSync(uploadDir, { recursive: true });
+        }
+        // Generate a unique filename
+        const ext = path.extname(req.file.originalname);
+        const filename = `${Date.now()}_${Math.round(Math.random() * 1e9)}${ext}`;
+        const filePath = path.join(uploadDir, filename);
+        fs.writeFileSync(filePath, req.file.buffer);
+        // Set the URL to be accessible from the frontend
+        upiScannerImageUrl = `/uploads/upi_scanners/${filename}`;
+    }
+
     const captain = await captainService.createCaptain({
         firstname: fullname.firstname,
         lastname: fullname.lastname,
@@ -29,14 +44,18 @@ module.exports.registerCaptain = async (req, res, next) => {
         color: vehicle.color,
         plate: vehicle.plate,
         capacity: vehicle.capacity,
-        vehicleType: vehicle.vehicleType
-        
+        vehicleType: vehicle.vehicleType,
+        upiScannerImageUrl // Pass this to the model
     });
-    
-    
+
+    // Save the image URL to the captain document
+    if (upiScannerImageUrl) {
+        captain.upiScannerImageUrl = upiScannerImageUrl;
+        await captain.save();
+    }
+
     const token = captain.generateAuthToken();
     res.status(201).json({ token, captain });
-    
 }
 
 module.exports.loginCaptain = async (req, res, next) => {

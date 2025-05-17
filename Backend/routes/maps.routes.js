@@ -22,5 +22,12 @@ router.get('/get-suggestions',
     mapController.getAutoCompleteSuggestions
 )
 
+router.get('/get-address-from-coords',
+    query('lat').isFloat(),
+    query('lng').isFloat(),
+    authMiddleware.authUser,
+    mapController.getAddressFromCoords
+);
+
 module.exports = router;
 

@@ -90,3 +90,24 @@ module.exports.getCaptainsInTheRadius = async (ltd, lng, radius) => {
     });
     return captains;
 };
+
+// Function to get address from coordinates (reverse geocoding)
+module.exports.getAddressFromCoords = async (lat, lng) => {
+    const apiKey = process.env.MAP_API;
+    const url = `https://api.openrouteservice.org/geocode/reverse?api_key=${apiKey}&point.lat=${lat}&point.lon=${lng}`;
+
+    try {
+        const response = await axios.get(url);
+        const { features } = response.data;
+
+        if (!features || features.length === 0) {
+            throw new Error('No address found for the given coordinates');
+        }
+
+        // Return the formatted address or name
+        return features[0].properties.label || features[0].properties.name;
+    } catch (error) {
+        console.error('Error fetching address from coordinates:', error.response ? error.response.data : error.message);
+        return null;
+    }
+};
