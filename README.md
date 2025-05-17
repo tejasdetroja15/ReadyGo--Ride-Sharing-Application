@@ -10,6 +10,9 @@ A full-stack ride-sharing platform that connects passengers with drivers in real
 - 👨‍✈️ Driver management system
 - 🔔 Real-time notifications
 - 💳 Secure payment processing
+  - Credit/Debit Cards
+  - UPI Payments
+  - Cash Payments
 - 📊 Ride history and user profiles
 - 📱 Responsive design for all devices
 
@@ -128,24 +131,7 @@ EMAIL_PASS=your_email_password
 - `/api/maps` - Maps integration
 - `/api/drivers` - Driver management
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📬 Contact
-
-Project Link: [https://github.com/yourusername/readygo](https://github.com/yourusername/readygo)
 
 ---
 
-Made with ❤️ by [Your Name] 
+Made with ❤️ by Tejas Detroja
