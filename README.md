@@ -1,16 +1,17 @@
-# 🚗 Uber-like Ride Sharing Application
+# 🚗 ReadyGo - Modern Ride Sharing Application
 
-A modern, scalable full-stack web application that provides ride-sharing services similar to Uber, built with cutting-edge web technologies and best practices.
+A full-stack ride-sharing platform that connects passengers with drivers in real-time, built with modern web technologies and best practices.
 
-## ✨ Key Features
+## ✨ Features
 
 - 🔐 Secure user authentication and authorization
 - 🚀 Real-time ride booking and tracking
 - 🗺️ Interactive maps for location selection
-- 👨‍✈️ Driver (Captain) management system
-- 🔔 Real-time notifications using WebSocket
+- 👨‍✈️ Driver management system
+- 🔔 Real-time notifications
 - 💳 Secure payment processing
 - 📊 Ride history and user profiles
+- 📱 Responsive design for all devices
 
 ## 🛠️ Tech Stack
 
@@ -125,11 +126,11 @@ EMAIL_PASS=your_email_password
 - `/api/users` - User management
 - `/api/rides` - Ride management
 - `/api/maps` - Maps integration
-- `/api/captains` - Driver management
+- `/api/drivers` - Driver management
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! To contribute:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -139,14 +140,12 @@ We welcome contributions from the community! To contribute:
 
 ## 📄 License
 
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📬 Contact
 
-[Tejas Detroja] - [tejasdetroja1510@gmail.com]
-
-Project Link: [https://github.com/tejasdetroja15/Uber-Clone](https://github.com/tejasdetroja15/Uber-Clone)
+Project Link: [https://github.com/yourusername/readygo](https://github.com/yourusername/readygo)
 
 ---
 
-Made with ❤️ by [Tejas Detroja] 
+Made with ❤️ by [Your Name] 
