@@ -68,4 +68,5 @@ const VehiclePanel = ({ fare, selectVehicle, setConfirmRidePanel, setVehiclePane
 }
 
 export default VehiclePanel
+//
   
