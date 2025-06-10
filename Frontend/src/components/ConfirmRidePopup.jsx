@@ -5,7 +5,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 
-const ConfirmRidePopup = (props) => {
+const ConfirmRidePopUp = (props) => {
     const navigate = useNavigate()
     const [otp, setOtp] = useState('')
 
@@ -86,4 +86,4 @@ const ConfirmRidePopup = (props) => {
   )
 }
 
-export default ConfirmRidePopup
+export default ConfirmRidePopUp
