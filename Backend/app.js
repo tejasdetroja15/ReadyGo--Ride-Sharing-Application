@@ -13,7 +13,14 @@ const path = require('path');
 const connectToDb = require('./db/db.js');
 connectToDb();
 
-app.use(cors());
+// CORS configuration
+app.use(cors({
+    origin: process.env.VITE_BASE_URL || 'http://localhost:5173', // Your frontend URL
+    credentials: true, // Allow credentials (cookies, authorization headers)
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
@@ -30,4 +37,4 @@ app.use('/captains', captainRoutes);
 app.use('/maps', mapsRoutes);
 app.use('/rides', rideRoutes);
 
-module.exports= app;
+module.exports = app;
