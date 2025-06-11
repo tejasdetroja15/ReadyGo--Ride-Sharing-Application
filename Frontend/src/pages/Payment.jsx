@@ -14,11 +14,11 @@ const Payment = () => {
     }
 
     // Prepend backend URL if needed
-    const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000';
+    const backendUrl = import.meta.env.VITE_BASE_URL || 'http://localhost:4000';
     const qrImageUrl = ride.captain.upiScannerImageUrl
         ? ride.captain.upiScannerImageUrl.startsWith('http')
             ? ride.captain.upiScannerImageUrl
-            : `${backendUrl}${ride.captain.upiScannerImageUrl}`
+            : `${backendUrl}${ride.captain.upiScannerImageUrl.startsWith('/') ? '' : '/'}${ride.captain.upiScannerImageUrl}`
         : '';
 
     const handlePayment = () => {

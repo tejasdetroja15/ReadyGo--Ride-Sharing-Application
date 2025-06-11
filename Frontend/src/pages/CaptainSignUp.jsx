@@ -140,7 +140,7 @@ const CaptainSignUp = () => {
         <div className="w-full max-w-2xl">
           <div className="text-center mb-8 lg:hidden">
             <div className="rounded-lg p-3 ">
-              <img className="h-10 w-auto" src="/src/assets/yatraa-logo.png" alt="Driver Logo" />
+              <img className="h-10 w-auto" src="/images/Readygo-logo.png" alt="Driver Logo" />
             </div>
             <h2 className="mt-4 text-2xl font-bold text-gray-800">Driver Registration</h2>
           </div>

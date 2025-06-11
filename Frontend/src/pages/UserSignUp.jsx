@@ -68,9 +68,9 @@ const UserSignup = () => {
       <header className="bg-white shadow-sm p-4 flex items-center justify-between">
         <div className="inline-block rounded-lg p-3 shadow-lg bg-white border border-gray-200">
           <img
-            className="h-16 w-auto mx-auto"
-            src="/src/assets/yatraa-logo.png"
-            alt="Driver Logo"
+            className="h-12 w-auto mx-auto"
+            src="/images/Readygo-logo.png"
+            alt="RideNow Logo"
           />
         </div>
         <Link to="/captain-signup" className="text-sm text-gray-600 hover:text-black transition-colors">

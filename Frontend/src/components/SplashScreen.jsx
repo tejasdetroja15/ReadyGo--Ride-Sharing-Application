@@ -56,10 +56,9 @@ const SplashScreen = () => {
             className="bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full p-3 shadow-xl shadow-amber-900/20 flex items-center justify-center"
           >
             <img
-              src="/src/assets/yatraa-logo.png"
-              alt="Yatraa Logo"
-              className="h-12 w-18 object-contain"
-              style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.10))' }}
+              className="h-12 w-auto mx-auto"
+              src="/images/Readygo-logo.png"
+              alt="RideNow Logo"
             />
           </motion.div>
           <motion.h1

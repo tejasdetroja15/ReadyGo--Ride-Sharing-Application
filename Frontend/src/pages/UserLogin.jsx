@@ -46,7 +46,7 @@ const UserLogin = () => {
           <div className="inline-block rounded-full p-2 shadow-md bg-white border border-gray-200">
             <img
               className="h-12 w-auto mx-auto"
-              src="/src/assets/yatraa-logo.png"
+              src="/images/Readygo-logo.png"
               alt="RideNow Logo"
             />
           </div>

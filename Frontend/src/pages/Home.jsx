@@ -300,7 +300,7 @@ const Home = () => {
                 <div className="flex items-center gap-3 border-r pr-4 border-gray-200">
                     <img
                         className='w-24 md:w-28 h-auto object-contain transition-transform duration-300 hover:scale-105'
-                        src="/src/assets/yatraa-logo.png"
+                        src="/images/Readygo-logo.png"
                         alt="Yatraa Logo"
                     />
                 </div>

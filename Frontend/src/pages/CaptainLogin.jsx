@@ -48,8 +48,8 @@ const CaptainLogin = () => {
           <div className="inline-block rounded-full p-2 shadow-md bg-white border border-gray-200">
             <img
               className="h-12 w-auto mx-auto"
-              src="/src/assets/yatraa-logo.png"
-              alt="Driver Logo"
+              src="/images/Readygo-logo.png"
+              alt="RideNow Logo"
             />
           </div>
           <h2 className="mt-3 text-2xl font-bold text-gray-800">Driver Portal</h2>

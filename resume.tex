@@ -1,0 +1,149 @@
+%-------------------------
+% Resume in Latex
+% Author: Tejas Detroja
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Tejas Detroja} \\ \vspace{3pt}
+    \small
+    \faMobile* \hspace{.5pt} \href{tel:+1234567890}{+1 (234) 567-890} $|$ 
+    \faEnvelope \hspace{.5pt} \href{mailto:tejas@example.com}{tejas@example.com} $|$
+    \faGithub \hspace{.5pt} \href{https://github.com/tejasdetroja}{github.com/tejasdetroja} $|$
+    \faLinkedin \hspace{.5pt} \href{https://linkedin.com/in/tejasdetroja}{linkedin.com/in/tejasdetroja}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University Name}{City, State}
+      {Bachelor of Technology in Computer Science}{2018 -- 2022}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{\href{https://github.com/tejasdetroja15/ReadyGo}{ReadyGo}} $|$ \emph{React Native, Firebase, Google Maps API}}{}
+    \resumeItemListStart
+      \resumeItem{Developed a user-friendly mobile interface using React Native, ensuring cross-platform compatibility}
+      \resumeItem{Implemented real-time location tracking and ride requests using Socket.IO and Google Maps API}
+      \resumeItem{Designed and managed a MongoDB database schema for efficient storage of user and ride data}
+      \resumeItem{Integrated secure user authentication and authorization mechanisms in the backend}
+      \resumeItem{Deployed the application on cloud platforms, ensuring scalability and reliability}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Technical Skills}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: JavaScript, TypeScript, HTML5, CSS3} \\
+     \textbf{Frontend}{: React.js, Vite, Tailwind CSS, React Router, Socket.io-client, Leaflet, GSAP, Axios} \\
+     \textbf{Backend}{: Node.js, Express.js, MongoDB, Mongoose, Socket.io, JWT, Bcrypt, Nodemailer} \\
+     \textbf{Tools}{: Git, VS Code, Postman, MongoDB Compass} \\
+     \textbf{Soft Skills}{: Problem Solving, Team Collaboration, Agile Development}
+    }}
+  \end{itemize}
+
+%-----------PROJECTS-----------
+\section{Key Features Implemented}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Real-time ride booking and tracking system}
+    \resumeSubItem{Secure user authentication and authorization}
+    \resumeSubItem{Interactive maps integration for location selection}
+    \resumeSubItem{Driver management system with real-time updates}
+    \resumeSubItem{Secure payment processing (Credit/Debit Cards, UPI, Cash)}
+    \resumeSubItem{Ride history and user profile management}
+    \resumeSubItem{Real-time notifications system}
+  \resumeSubHeadingListEnd
+
+\end{document} 
