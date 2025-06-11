@@ -15,7 +15,7 @@ connectToDb();
 
 // CORS configuration
 app.use(cors({
-    origin: process.env.VITE_BASE_URL || 'http://localhost:5173', // Your frontend URL
+    origin: ['http://localhost:5173', 'https://ready-go-ride-sharing-application.vercel.app'],
     credentials: true, // Allow credentials (cookies, authorization headers)
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
