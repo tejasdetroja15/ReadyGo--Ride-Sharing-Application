@@ -52,15 +52,8 @@ const UserSignup = () => {
     }
   }
 
-  // Password strength checker
-  const checkPasswordStrength = (pass) => {
-    if (!pass) return '';
-    if (pass.length < 6) return 'weak';
-    if (pass.length < 10) return 'medium';
-    return 'strong';
-  }
-
-  const passwordStrength = checkPasswordStrength(password);
+  // Remove old passwordStrength checker and add new validation
+  const isPasswordValid = password.length === 6;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 flex flex-col">
@@ -146,26 +139,20 @@ const UserSignup = () => {
                   id="password"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required 
+                  onChange={(e) => {
+                    // Only allow up to 6 characters
+                    if (e.target.value.length <= 6) setPassword(e.target.value);
+                  }}
+                  required
                   type="password"
-                  placeholder="Create a secure password"
+                  placeholder="Password (6 characters only)"
+                  maxLength={6}
                 />
                 {password && (
                   <div className="absolute right-3 top-2.5 flex items-center">
                     <div className="flex space-x-1">
                       <div className={`h-1.5 w-5 rounded-full ${
-                        passwordStrength === 'weak' ? 'bg-red-500' : 
-                        passwordStrength === 'medium' ? 'bg-yellow-500' : 
-                        'bg-gray-200'
-                      }`}></div>
-                      <div className={`h-1.5 w-5 rounded-full ${
-                        passwordStrength === 'medium' ? 'bg-yellow-500' : 
-                        passwordStrength === 'strong' ? 'bg-green-500' : 
-                        'bg-gray-200'
-                      }`}></div>
-                      <div className={`h-1.5 w-5 rounded-full ${
-                        passwordStrength === 'strong' ? 'bg-green-500' : 'bg-gray-200'
+                        isPasswordValid ? 'bg-green-500' : 'bg-red-500'
                       }`}></div>
                     </div>
                   </div>
@@ -173,9 +160,9 @@ const UserSignup = () => {
               </div>
               {password && (
                 <p className="text-xs text-gray-500 mt-1">
-                  {passwordStrength === 'weak' ? 'Weak - Use at least 6 characters' : 
-                   passwordStrength === 'medium' ? 'Medium - Consider adding numbers or symbols' : 
-                   'Strong password'}
+                  {isPasswordValid
+                    ? 'Password length is valid'
+                    : 'Password must be exactly 6 characters'}
                 </p>
               )}
             </div>
@@ -196,7 +183,7 @@ const UserSignup = () => {
 
             <button
               type="submit"
-              disabled={isLoading}
+              disabled={isLoading || !isPasswordValid}
               className="w-full text-white bg-black hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-3 text-center transition-all duration-300 flex items-center justify-center"
             >
               {isLoading ? (
