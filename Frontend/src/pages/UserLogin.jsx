@@ -107,7 +107,7 @@ const UserLogin = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="pl-10 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1a73e8] focus:border-[#1a73e8] text-sm"
-                  placeholder="test123"
+                  placeholder="test12"
                 />
               </div>
             </div>
